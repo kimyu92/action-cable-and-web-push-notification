@@ -1,0 +1,9 @@
+= @question.content
+hr
+= render partial: 'answer', collection: @question.answers
+
+= form_for @answer do |f|
+  = f.hidden_field :question_id
+  = f.text_field :content
+  br
+  = f.submit
