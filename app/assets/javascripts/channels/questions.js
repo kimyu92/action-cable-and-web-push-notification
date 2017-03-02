@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var question_id = document.getElementById('answer_question_id').value;
+  var question_id = document.querySelector('#answer_question_id').value;
 
   App.answers = App.cable.subscriptions.create({ channel: 'ApplicationCable::QuestionsChannel', question_id: question_id }, {
     received: function(data) {
-      console.log(data.content);
-      return document.getElementById('answers').append(data.content + '<br>')
+      var node = document.createElement('p');
+      nodeChild = document.createTextNode(data.content);
+      node.appendChild(nodeChild);
+      return document.querySelector('#answers').appendChild(node)
     }
   });
 });
