@@ -1,6 +1,9 @@
+= link_to 'Questions', questions_path
+br
 = @question.content
 hr
-= render partial: 'answer', collection: @question.answers
+#answers
+  = render partial: 'answer', collection: @question.answers
 
 = form_for @answer do |f|
   = f.hidden_field :question_id

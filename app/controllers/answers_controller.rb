@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     answer = Answer.new(permitted_attributes)
 
     if answer.save
+      ActionCable.server.broadcast 'answers', content: answer.content
       redirect_to question_path(answer.question)
     end
   end
