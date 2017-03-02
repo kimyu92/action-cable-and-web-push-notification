@@ -26,12 +26,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var togglePushElement = document.querySelector('.toggle-push-element');
-//Click event for subscribe push
+  //Click event for subscribe push
   togglePushElement.addEventListener('click', function () {
     var isSubscribed = (togglePushElement.dataset.checked === 'true');
     if (isSubscribed) {
-      // unsubscribePush();
-      console.log('unsubscribePush');
+      unsubscribePush();
     }
     else {
       subscribePush();
@@ -61,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
         userVisibleOnly: true //Always show notification when received
       })
         .then(function (subscription) {
-          console.info('Push notification subscribed.');
-          console.log(subscription);
-          //saveSubscriptionID(subscription);
+          // console.info('Push notification subscribed.');
+          // console.log(subscription);
+          saveSubscriptionID(subscription);
           changePushStatus(true);
         })
         .catch(function (error) {
@@ -88,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 //Unsubscribe `push notification`
                 subscription.unsubscribe()
                     .then(function () {
-                      console.info('Push notification unsubscribed.');
-                      console.log(subscription);
-                      //deleteSubscriptionID(subscription);
+                      // console.info('Push notification unsubscribed.');
+                      // console.log(subscription);
+                      deleteSubscriptionID(subscription);
                       changePushStatus(false);
                     })
                     .catch(function (error) {
@@ -103,30 +102,33 @@ document.addEventListener("DOMContentLoaded", function() {
         })
   }
 
-  // function saveSubscriptionID(subscription) {
-  //   var subscription_id = subscription.endpoint.split('gcm/send/')[1];
-  //
-  //   console.log("Subscription ID", subscription_id);
-  //
-  //   fetch('http://localhost:3333/api/users', {
-  //     method: 'post',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({ user_id : subscription_id })
-  //   });
-  // }
-  //
-  // function deleteSubscriptionID(subscription) {
-  //   var subscription_id = subscription.endpoint.split('gcm/send/')[1];
-  //
-  //   fetch('http://localhost:3333/api/user/' + subscription_id, {
-  //     method: 'delete',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     }
-  //   });
-  // }
+  function saveSubscriptionID(subscription) {
+    var subscription_id = subscription.endpoint.split('gcm/send/')[1];
+    var subscription_path = window.location.pathname;
+
+    console.log("Subscription ID: ", subscription_id);
+    console.log('subscription_path: ', subscription_path);
+
+    fetch('http://localhost:3000/api/subscriptions', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ subscription_id : subscription_id, subscription_path: subscription_path })
+    });
+  }
+
+  function deleteSubscriptionID(subscription) {
+    var subscription_id = subscription.endpoint.split('gcm/send/')[1];
+
+    console.log("Subscription ID", subscription_id);
+    fetch('http://localhost:3000/api/subscriptions/' + subscription_id, {
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
+  }
 })

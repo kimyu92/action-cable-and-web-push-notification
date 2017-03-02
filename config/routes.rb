@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
+  scope :api, module: 'api' do
+    resources :subscriptions, only: [:create, :destroy]
+  end
+
   resources :questions, only: [:index, :show]
   resources :answers, only: :create
 
