@@ -7,7 +7,7 @@ class PushNotificationJob < ApplicationJob
     message = {
         title: 'New answer',
         body: "New answer for question #{question.content}. CLick to view it.",
-        icon: 'https://nimbl3.com/assets/image/favicon.ico?1399950378',
+        icon: 'https://avatars2.githubusercontent.com/u/7391673?v=3&s=200',
         open_url: question_path(question)
     }
 
