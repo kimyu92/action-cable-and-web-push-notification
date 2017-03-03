@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example Rails app, using Action Cable and Service Worker (Web Push Notification)
 
-Things you may want to cover:
+Live demo available: https://question-answer-nimbl3-growth.herokuapp.com/
 
-* Ruby version
+## Technicals ##
 
-* System dependencies
+- Action Cable
+- Service Worker - Web push notification
+- Firebase clound message
 
-* Configuration
+## Run it on local ##
 
-* Database creation
+### Step 1 ###
 
-* Database initialization
+Create a new project on Firebase at https://console.firebase.google.com/
 
-* How to run the test suite
+Get `Server key` and `Sender ID` for `Firebase cloud messaging` at https://console.firebase.google.com/project/qa-nimbl3-growth/settings/cloudmessaging
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Step 2 ###
 
-* ...
+Edit file `public/manifest.json`, change `gcm_sender_id` to your `Sender ID` above
+
+
+```
+# public/manifest.json
+
+{
+  "gcm_sender_id": <YOUR_SENDER_ID>
+}
+
+
+```
+
+Edit file `config/application.yml`
+
+- Change `FIRE_BASE_API_KEY` to `your server key`
+- Change `DB_HOST` to `your database host`
+- Change `DB_PORT` to `your database port`
+- Change `USERNAME` to `your database username`
+- Change `FIRE_BASE_API_KEY` to `your server key`
+- Change `REDISTOGO_URL` to `your redis url`
+
+```
+# config/application.yml
+
+development:
+  DB_HOST: "192.168.99.100"
+  DB_PORT: "5432"
+  USERNAME: "postgres"
+  FIRE_BASE_API_KEY: 'YOUR_SERVER_KEY'
+  REDISTOGO_URL: 'YOUR_REDIS_URL'
+```
+
+
+### Step 3 ###
+
+```
+rake db:setup
+
+```
+
+### Step 4 ###
+
+```
+foreman start -f Procfile
+```

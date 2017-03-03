@@ -5,16 +5,16 @@ default: &default
 
 development:
   <<: *default
-  host:     '192.168.99.100'
-  port:     '5432'
-  username: 'postgres'
+  host:     <%= ENV['DB_HOST'] %>
+  port:     <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USER'] %>
   database: 'question_and_answer_development'
 
 test:
   <<: *default
-  host:     '192.168.99.100'
-  port:     '5432'
-  username: 'postgres'
+  host:     <%= ENV['DB_HOST'] %>
+  port:     <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USER'] %>
   database: 'question_and_answer_test'
 
 production:
