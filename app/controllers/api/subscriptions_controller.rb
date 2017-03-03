@@ -17,7 +17,7 @@ module Api
     private
 
     def permitted_attributes
-      params.permit(:subscription_id, :subscription_path)
+      params.permit(:subscription_id, :subscription_path, :key_auth, :key_p256dh, :endpoint)
     end
   end
 end

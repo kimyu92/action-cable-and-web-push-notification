@@ -103,11 +103,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function saveSubscriptionID(subscription) {
-    var subscription_id = subscription.endpoint.split('gcm/send/')[1];
+    var subscription_json = subscription.toJSON();
+    var subscription_id = subscription_json.endpoint.split('gcm/send/')[1];
+    var subscription_key_auth = subscription_json.keys.auth;
+    var subscription_key_p256dh = subscription_json.keys.p256dh;
     var subscription_path = window.location.pathname;
-
-    console.log("Subscription ID: ", subscription_id);
-    console.log('subscription_path: ', subscription_path);
 
     fetch('http://localhost:3000/api/subscriptions', {
       method: 'post',
@@ -115,7 +115,14 @@ document.addEventListener("DOMContentLoaded", function() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ subscription_id : subscription_id, subscription_path: subscription_path })
+      body: JSON.stringify(
+          {
+            subscription_id : subscription_id,
+            subscription_path: subscription_path,
+            key_auth: subscription_key_auth,
+            key_p256dh: subscription_key_p256dh,
+            endpoint: subscription.endpoint
+          })
     });
   }
 

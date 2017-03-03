@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20170302190844) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "subscription_id", default: "", null: false
     t.string "subscription_path", default: "", null: false
+    t.string "endpoint", default: "", null: false
+    t.string "key_p256dh", default: "", null: false
+    t.string "key_auth", default: "", null: false
   end
 
   add_foreign_key "answers", "questions"
