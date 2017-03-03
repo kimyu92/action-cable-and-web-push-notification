@@ -3,7 +3,8 @@ h2 Navigator
 br
 = link_to 'Create questions', new_question_path
 h2 Questions
-= render partial: 'question', collection: @questions
+div.questions
+  = render partial: 'question', collection: @questions
 
 h2 Description
 

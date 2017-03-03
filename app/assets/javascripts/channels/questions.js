@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var question_id = document.querySelector('#answer_question_id').value;
-
-  App.answers = App.cable.subscriptions.create({ channel: 'ApplicationCable::QuestionsChannel', question_id: question_id }, {
+  App.answers = App.cable.subscriptions.create({ channel: 'ApplicationCable::QuestionsChannel' }, {
     received: function(data) {
-      var node = document.createElement('p');
-      nodeChild = document.createTextNode(data.content);
-      node.appendChild(nodeChild);
-      return document.querySelector('#answers').appendChild(node)
+      var divQuestion = document.createElement('div');
+      var questionLink = document.createElement('a');
+      var questionLinkText = document.createTextNode(data.id + ' - ' + data.content);
+
+      questionLink.appendChild(questionLinkText);
+      questionLink.href = '/questions/' + data.id ;
+
+      divQuestion.appendChild(questionLink);
+      return document.querySelector('.questions').appendChild(divQuestion)
     }
   });
 });
+

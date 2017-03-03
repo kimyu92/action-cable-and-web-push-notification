@@ -1,11 +1,15 @@
-= link_to 'Questions', questions_path
-br
-= @question.content
-hr
-#answers
-  = render partial: 'answer', collection: @question.answers
+h2 Navigator
+= link_to 'Home', root_path
 
-= form_for @answer do |f|
+h2 Question
+= @question.content
+
+h2 Answers
+#answers
+  ul
+    = render partial: 'answer', collection: @question.answers
+
+= form_for @question.answers.new do |f|
   = f.hidden_field :question_id
   = f.text_field :content
   br
