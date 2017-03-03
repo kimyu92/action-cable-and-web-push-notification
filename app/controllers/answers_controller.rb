@@ -3,12 +3,9 @@ class AnswersController < ApplicationController
 
   def create
     answer = Answer.new(permitted_attributes)
+    answer.save!
 
-    if answer.save
-      ActionCable.server.broadcast "questions_#{answer.question.id}", content: answer.content
-      webpush
-      redirect_to question_path(answer.question)
-    end
+    redirect_to question_path(answer.question)
   end
 
   private

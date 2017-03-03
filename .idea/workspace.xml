@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="313f6ba6-2904-4cdb-a0dc-41c6cf6c8a7e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/questions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/question.rb" afterPath="$PROJECT_DIR$/app/models/question.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/_question.html.slim" afterPath="$PROJECT_DIR$/app/views/questions/_question.html.slim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/channels/answers.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/answers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/answers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/answers_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/answer.rb" afterPath="$PROJECT_DIR$/app/models/answer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/_answer.html.slim" afterPath="$PROJECT_DIR$/app/views/questions/_answer.html.slim" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/show.html.slim" afterPath="$PROJECT_DIR$/app/views/questions/show.html.slim" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -76,7 +77,6 @@
         <option value="$PROJECT_DIR$/config/cable.yml" />
         <option value="$PROJECT_DIR$/config/secrets.yml" />
         <option value="$PROJECT_DIR$/config/database.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/answers_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/service-worker-server.js" />
@@ -87,17 +87,18 @@
         <option value="$PROJECT_DIR$/app/views/questions/edit.html.slim" />
         <option value="$PROJECT_DIR$/app/channels/application_cable/questions_channel.rb" />
         <option value="$PROJECT_DIR$/app/models/subscription.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/channels/answers.js" />
         <option value="$PROJECT_DIR$/app/channels/application_cable/answers_channel.rb" />
-        <option value="$PROJECT_DIR$/app/models/answer.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/questions/_answer.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/questions/show.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/channels/questions.js" />
         <option value="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/_question.html.slim" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
+        <option value="$PROJECT_DIR$/app/models/answer.rb" />
+        <option value="$PROJECT_DIR$/app/views/questions/_answer.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/questions/show.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/channels/answers.js" />
+        <option value="$PROJECT_DIR$/app/controllers/answers_controller.rb" />
       </list>
     </option>
   </component>
@@ -157,22 +158,12 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="questions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -190,7 +181,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answer-with-action-cable-and-service-worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -443,7 +466,7 @@
       <updated>1488442765579</updated>
       <workItem from="1488442767076" duration="399000" />
       <workItem from="1488443508828" duration="4805000" />
-      <workItem from="1488448331476" duration="33515000" />
+      <workItem from="1488448331476" duration="34086000" />
     </task>
     <task id="LOCAL-00001" summary="Finish basic implement view">
       <created>1488447018543</created>
@@ -536,11 +559,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488527005174</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add realtime for new question">
+      <created>1488527111001</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1488527111001</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38719000" />
+    <option name="totallyTimeSpent" value="39290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1962" y="23" width="1878" height="1057" extended-state="0" />
@@ -724,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/subscriptions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -908,58 +930,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/_answer.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/questions/new.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/channels/application_cable/answers_channel.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/answers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="91" lean-forward="false" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/questions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -976,14 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="75" lean-forward="false" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/answers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="93" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="93" />
           <folding />
         </state>
       </provider>
@@ -1008,6 +974,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/subscriptions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="92" lean-forward="true" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/answers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/channels/application_cable/answers_channel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/answers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/_answer.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/questions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="85" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="5" selection-end-column="85" />
           <folding />
         </state>
       </provider>

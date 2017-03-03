@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   App.answers = App.cable.subscriptions.create({ channel: 'ApplicationCable::AnswersChannel', question_id: question_id }, {
     received: function(data) {
-      var node = document.createElement('p');
-      nodeChild = document.createTextNode(data.content);
-      node.appendChild(nodeChild);
-      return document.querySelector('#answers').appendChild(node)
+      var liAnswer = document.createElement('li');
+      var answerText = document.createTextNode(data.id + ' - ' + data.content);
+      liAnswer.appendChild(answerText);
+
+      return document.querySelector('#answers').appendChild(liAnswer)
     }
   });
 });

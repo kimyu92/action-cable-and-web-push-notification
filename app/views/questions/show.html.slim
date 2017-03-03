@@ -5,9 +5,9 @@ h2 Question
 = @question.content
 
 h2 Answers
-#answers
-  ul
-    = render partial: 'answer', collection: @question.answers
+
+ul#answers
+  = render partial: 'answer', collection: @question.answers
 
 = form_for @question.answers.new do |f|
   = f.hidden_field :question_id

@@ -3,11 +3,11 @@ class Answer < ApplicationRecord
 
   validates :content, :question, presence: true
 
-  after_save :send_broadcast
+  after_create :send_broadcast
 
   private
 
   def send_broadcast
-    ActionCable.server.broadcast "answers_#{id}", id: id, content: content
+    ActionCable.server.broadcast "answers_#{question.id}", id: id, content: content
   end
 end
