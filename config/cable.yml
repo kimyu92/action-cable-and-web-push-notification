@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:1a076cd2bc8c38eb2ebaa69c3deec221@crestfish.redistogo.com:11788/
+  url: <%= ENV['REDISTOGO_URL'] %>
   channel_prefix: question-answer-with-action-cable-and-service-worker_production
