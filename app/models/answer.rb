@@ -13,6 +13,6 @@ class Answer < ApplicationRecord
   end
 
   def push_notification
-    PushNotificationJob.perform_later(question)
+    PushNotificationJob.perform_later(question.id)
   end
 end

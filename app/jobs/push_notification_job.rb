@@ -3,7 +3,9 @@ class PushNotificationJob < ApplicationJob
 
   queue_as :default
 
-  def perform(question)
+  def perform(question_id)
+    question = Question.find(question_id)
+
     message = {
         title: 'New answer',
         body: "New answer for question #{question.content}. CLick to view it.",
