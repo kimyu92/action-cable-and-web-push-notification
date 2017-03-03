@@ -1,2 +1,8 @@
-= link_to question.content, question_path(question)
-br
+div
+  = question.id
+  | -
+  = link_to question.content, question_path(question)
+  | -
+  = link_to 'Edit', edit_question_path(question)
+  | -
+  = link_to 'Destroy', question_path(question), data: { confirm: 'Are you sure?' }, method: :delete

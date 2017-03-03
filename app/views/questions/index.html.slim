@@ -1,3 +1,11 @@
+h2 Navigator
 = link_to 'Home', root_path
 br
+= link_to 'Create questions', new_question_path
+h2 Questions
 = render partial: 'question', collection: @questions
+
+h2 Description
+
+p
+  | If user stay on this page, they can get status of questions (new, edit, delete) realtime
