@@ -41,7 +41,6 @@ Edit file `config/application.yml`
 - Change `DB_PORT` to `your database port`
 - Change `USERNAME` to `your database username`
 - Change `FIRE_BASE_API_KEY` to `your server key`
-- Change `REDISTOGO_URL` to `your redis url`
 
 ```
 # config/application.yml
@@ -51,7 +50,6 @@ development:
   DB_PORT: "5432"
   USERNAME: "postgres"
   FIRE_BASE_API_KEY: 'YOUR_SERVER_KEY'
-  REDISTOGO_URL: 'YOUR_REDIS_URL'
 ```
 
 
@@ -65,5 +63,5 @@ rake db:setup
 ### Step 4 ###
 
 ```
-foreman start -f Procfile
+rails server
 ```
