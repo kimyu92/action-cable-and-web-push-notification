@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var subscription_key_p256dh = subscription_json.keys.p256dh;
     var subscription_path = window.location.pathname;
 
-    fetch('http://localhost:3000/api/subscriptions', {
+    fetch('/api/subscriptions', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var subscription_id = subscription.endpoint.split('gcm/send/')[1];
 
     console.log("Subscription ID", subscription_id);
-    fetch('http://localhost:3000/api/subscriptions/' + subscription_id, {
+    fetch('/api/subscriptions/' + subscription_id, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
