@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :subscriptions, only: [:create, :destroy]
   end
 
-  resources :questions
+  resources :questions, only: [:show, :new, :create]
   resources :answers, only: :create
 
   root to: 'home#index'

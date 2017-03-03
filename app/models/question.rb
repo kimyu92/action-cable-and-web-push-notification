@@ -3,7 +3,7 @@ class Question < ApplicationRecord
 
   validates :content, presence: true
 
-  after_save :send_broadcast
+  after_create :send_broadcast
 
   private
 
