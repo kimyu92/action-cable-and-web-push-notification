@@ -3,8 +3,8 @@ class Answer < ApplicationRecord
 
   validates :content, :question, presence: true
 
-  after_commit :send_broadcast
-  after_commit :push_notification
+  after_create :send_broadcast
+  after_create :push_notification
 
   private
 
