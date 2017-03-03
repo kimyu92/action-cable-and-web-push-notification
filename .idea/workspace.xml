@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="313f6ba6-2904-4cdb-a0dc-41c6cf6c8a7e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/jobs/push_notification_job.rb" afterPath="$PROJECT_DIR$/app/jobs/push_notification_job.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/answer.rb" afterPath="$PROJECT_DIR$/app/models/answer.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -28,11 +29,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="answer.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="answer.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="push_notification_job.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/jobs/push_notification_job.rb">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,9 +122,9 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/app/views/questions/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/questions/show.html.slim" />
-        <option value="$PROJECT_DIR$/app/jobs/push_notification_job.rb" />
         <option value="$PROJECT_DIR$/config/initializers/sidekiq.rb" />
         <option value="$PROJECT_DIR$/app/models/answer.rb" />
+        <option value="$PROJECT_DIR$/app/jobs/push_notification_job.rb" />
       </list>
     </option>
   </component>
@@ -188,7 +199,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="jobs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,7 +452,7 @@
       <updated>1488442765579</updated>
       <workItem from="1488442767076" duration="399000" />
       <workItem from="1488443508828" duration="4805000" />
-      <workItem from="1488448331476" duration="38459000" />
+      <workItem from="1488448331476" duration="38558000" />
     </task>
     <task id="LOCAL-00001" summary="Finish basic implement view">
       <created>1488447018543</created>
@@ -618,11 +629,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488532109072</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Change to after_create">
+      <created>1488532238616</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1488532238616</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43663000" />
+    <option name="totallyTimeSpent" value="43762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1962" y="23" width="1878" height="1057" extended-state="0" />
@@ -699,7 +717,8 @@
     <MESSAGE value="Pass question id to sidekiq" />
     <MESSAGE value="Change to after_commit" />
     <MESSAGE value="Add config sidekiq" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add config sidekiq" />
+    <MESSAGE value="Change to after_create" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change to after_create" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1042,14 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/jobs/push_notification_job.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1108,8 +1119,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/jobs/push_notification_job.rb">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
